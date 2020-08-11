@@ -1,0 +1,66 @@
+html {
+  background-color: #121212;
+  color: #e8e8e8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    div {
+      height: 100%;
+      width: 100%;
+      div {
+        height: 100%;
+        width: 100%;
+        main {
+          text-align: center;
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+          padding: 2.5%;
+          box-sizing: border-box;
+          .big {
+            width: 100%;
+            height: 1.5rem;
+            margin: 0.8rem;
+            font-size: 1.5rem;
+            color: #00ffff;
+            font-family: "Courier New", Courier, monospace;
+            strong {
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              color: #e8e8e8;
+            }
+          }
+          .chart-container {
+            background-color: #202020;
+            border: 1px solid #606060;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            .recharts-wrapper {
+              margin-left: auto;
+              margin-right: auto;
+              padding: 10px;
+              background-color: #0c0c0c;
+              border: 1px solid #505050;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+hr {
+  width: 90%;
+  border: 1px solid #606060;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
