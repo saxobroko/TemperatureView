@@ -1,4 +1,4 @@
-require("dotenv").config({})
+require("dotenv").config()
 const AUTH_KEY = process.env.AUTHORIZATION_KEY
 const cors = require("cors")
 const bodyParser = require("body-parser")
@@ -53,5 +53,6 @@ app.get("/api/get-data", (req, res) => {
 if (process.env.NODE_ENV !== "development") {
   app.use(express.static("public"))
 }
-
-app.listen(process.env.PORT | 3000)
+const port = process.env.PORT || 3000;
+app.listen(port)
+console.log(`Listening on port ${port}`);
