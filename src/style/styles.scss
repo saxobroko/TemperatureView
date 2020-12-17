@@ -24,8 +24,6 @@ html {
           margin: 0;
           height: 100%;
           width: 100%;
-          padding: 2.5%;
-          box-sizing: border-box;
           .big {
             width: 100%;
             height: 1.5rem;
@@ -39,18 +37,24 @@ html {
             }
           }
           .chart-container {
-            background-color: #202020;
+            box-sizing: border-box;
             border: 1px solid #606060;
-            border-radius: 10px;
             width: 100%;
             height: 100%;
-            .recharts-wrapper {
-              margin-left: auto;
-              margin-right: auto;
-              padding: 10px;
-              background-color: #0c0c0c;
-              border: 1px solid #505050;
-              border-radius: 5px;
+            .chart-wrap {
+              width: 50%;
+              height: calc(
+                100% - 24px * 3 - 12.8px * 3 - 12px - 29px - 19.92px * 2
+              );
+              float: left;
+              .chart-top {
+                height: 90%;
+                width: 100%;
+              }
+              .chart-bottom {
+                height: 10%;
+                width: 100%;
+              }
             }
           }
         }
