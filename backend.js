@@ -18,12 +18,16 @@ app.get("/api/get-data", async (req, res) => {
     const rows = await conn.query(
       "SELECT UNIX_TIMESTAMP(at) AS at, (temp * (9.0 / 5) + 32) AS temp, humidity FROM `temperature`.`temperature` WHERE at >= NOW() - INTERVAL 12 HOUR"
     )
-    let lastEntry = rows[rows.length - 1]
-    res.json({
-      lastTemperature: lastEntry.temp,
-      lastHumidity: lastEntry.humidity,
-      history: rows,
-    })
+    if (rows.length > 0) {
+      let lastEntry = rows[rows.length - 1]
+      res.json({
+        lastTemperature: lastEntry.temp,
+        lastHumidity: lastEntry.humidity,
+        history: rows,
+      })
+    } else {
+      res.json({ lastTemperature: 0, lastHumidity: 0, history: [] })
+    }
   } catch (err) {
     res.writeHead(500)
     res.end()
